@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "751229490657",
+    "project_id": "appdemocafe-10f0b50b",
+    "storage_bucket": "appdemocafe-10f0b50b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751229490657:android:d7eea62af57b77ccba2ea0",
+        "android_client_info": {
+          "package_name": "com.example.appdemocafe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjJXwPx4M591U2R0krmhMe3k0vxuJhcp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

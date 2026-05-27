@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">appdemocafe</string>
+    <string name="choiec_your_nfavorit_coffee">Choose your\nFavorite Coffee</string>
+    <string name="get_started">Get Started</string>
+    <string name="search_anything">Search anything...</string>
+    <string name="popular_coffee">Popular Coffee</string>
+    <string name="cart">Cart</string>
+    <string name="explorer">Explorer</string>
+    <string name="profite">Profite</string>
+    <string name="enter_your_discount_code">Enter Your Discount code</string>
+    <string name="apply">Apply</string>
+</resources>
