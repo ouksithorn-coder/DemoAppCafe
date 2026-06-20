@@ -1,4 +1,4 @@
-package com.example.appdemocafe.Domain
+package com.example.appdemocafe.domain
 
 import java.io.Serializable
 
@@ -10,4 +10,5 @@ data class ItemsModel(
     var rating: Double=0.0,
     var numberInCart: Int=0,
     var extra: String="",
-): Serializable
+    var categoryId: String = "",
+) : Serializable

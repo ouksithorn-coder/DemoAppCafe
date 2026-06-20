@@ -1,4 +1,4 @@
-package com.example.appdemocafe.Activity
+package com.example.appdemocafe.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding= ActivitySplashBinding.inflate(layoutInflater)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.startBtn.setOnClickListener {

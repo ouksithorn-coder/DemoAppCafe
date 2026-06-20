@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#010006"
-    tools:context=".Activity.SplashActivity">
+    tools:context=".activity.SplashActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="@string/choiec_your_nfavorit_coffee"
+        android:text="@string/choice_your_favorite_coffee"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="37sp"

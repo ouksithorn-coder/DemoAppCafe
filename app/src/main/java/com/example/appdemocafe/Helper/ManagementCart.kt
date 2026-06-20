@@ -1,17 +1,15 @@
-package com.example.appdemocafe.Helper
+package com.example.appdemocafe.helper
 
 import android.content.Context
 import android.widget.Toast
-import com.example.appdemocafe.Domain.ItemsModel
+import com.example.appdemocafe.domain.ItemsModel
 
-import kotlin.collections.indexOfFirst
-
-class ManagmentCart(val context: Context) {
+class ManagementCart(val context: Context) {
 
     private val tinyDB = TinyDB(context)
 
     fun insertItems(item: ItemsModel) {
-        var listItem = getListCart()
+        val listItem = getListCart()
         val existAlready = listItem.any { it.title == item.title }
         val index = listItem.indexOfFirst { it.title == item.title }
 
@@ -25,7 +23,7 @@ class ManagmentCart(val context: Context) {
     }
 
     fun getListCart(): ArrayList<ItemsModel> {
-        return tinyDB.getListObject("CartList") ?: arrayListOf()
+        return tinyDB.getListObject("CartList", ItemsModel::class.java) ?: arrayListOf()
     }
 
     fun minusItem(listItems: ArrayList<ItemsModel>, position: Int, listener: ChangeNumberItemsListener) {
@@ -37,10 +35,9 @@ class ManagmentCart(val context: Context) {
         tinyDB.putListObject("CartList", listItems)
         listener.onChanged()
     }
+
     fun removeItem(listItems: ArrayList<ItemsModel>, position: Int, listener: ChangeNumberItemsListener) {
-
         listItems.removeAt(position)
-
         tinyDB.putListObject("CartList", listItems)
         listener.onChanged()
     }

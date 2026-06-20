@@ -1,65 +1,49 @@
-package com.example.appdemocafe.Adapter
+package com.example.appdemocafe.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appdemocafe.Activity.ItemsListActivity
-import com.example.appdemocafe.Domain.CategoryModel
+import com.bumptech.glide.Glide
 import com.example.appdemocafe.R
+import com.example.appdemocafe.activity.ItemsListActivity
+import com.example.appdemocafe.domain.CategoryModel
 import com.example.appdemocafe.databinding.ViewholderCategoryBinding
 
 class CategoryAdapter(val items: MutableList<CategoryModel>) :
-    RecyclerView.Adapter<CategoryAdapter.Viewholder>() {
+    RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     private lateinit var context: Context
-    private var selectedPosition = -1
-    private var lastSelectedPosition = -1
 
-    inner class Viewholder(val binding: ViewholderCategoryBinding) :
+    class ViewHolder(val binding: ViewholderCategoryBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): CategoryAdapter.Viewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
         val binding = ViewholderCategoryBinding.inflate(LayoutInflater.from(context), parent, false)
-        return Viewholder(binding)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: CategoryAdapter.Viewholder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.binding.titleCat.text = item.title
-
-        holder.binding.root.setOnClickListener {
-            val currentPosition = holder.bindingAdapterPosition
-            if (currentPosition != RecyclerView.NO_POSITION) {
-                lastSelectedPosition = selectedPosition
-                selectedPosition = currentPosition
-                notifyItemChanged(lastSelectedPosition)
-                notifyItemChanged(selectedPosition)
-
-                Handler(Looper.getMainLooper()).postDelayed({
-                    val intent= Intent(context, ItemsListActivity::class.java).apply {
-                        putExtra("id",item.id.toString())
-                        putExtra("title",item.title)
-                    }
-                    ContextCompat.startActivity(context,intent,null)
-                }, 500)
-            }
+        val imageResource = when (position) {
+            0 -> R.drawable.ice
+            1 -> R.drawable.expresso
+            2 -> R.drawable.cappuccino
+            3 -> R.drawable.latte
+            4 -> R.drawable.black_cafe
+            else -> R.drawable.choco
         }
 
-        if (selectedPosition == position) {
-            holder.binding.titleCat.setBackgroundResource(R.drawable.brown_full_corner_bg)
-            holder.binding.titleCat.setTextColor(context.resources.getColor(R.color.white))
-        } else {
-            holder.binding.titleCat.setBackgroundResource(R.drawable.white_full_corner_bg)
-            holder.binding.titleCat.setTextColor(context.resources.getColor(R.color.darkBrown))
+        holder.binding.picCat.setImageResource(imageResource)
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ItemsListActivity::class.java)
+            intent.putExtra("id", item.id)
+            intent.putExtra("title", item.title)
+            context.startActivity(intent)
         }
     }
 

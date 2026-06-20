@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightCream"
-    tools:context=".Activity.MainActivity">
+    tools:context=".activity.MainActivity">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="90dp">
+            android:paddingBottom="90dp"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -25,22 +26,24 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="48dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/profile" />
+                    app:srcCompat="@drawable/profile"
+                    android:contentDescription="@null" />
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
-                    android:text="Tina Anderson"
+                    android:text="@string/user_name_placeholder"
                     android:textColor="@color/darkBrown"
                     android:textStyle="bold" />
 
@@ -50,7 +53,8 @@
                     android:layout_height="50dp"
                     android:background="@drawable/brown_full_corner_bg"
                     android:padding="12dp"
-                    app:srcCompat="@drawable/bell_icon" />
+                    app:srcCompat="@drawable/bell_icon"
+                    android:contentDescription="@null" />
 
             </LinearLayout>
 
@@ -60,11 +64,12 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="16dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
                 <EditText
                     android:id="@+id/editTextText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
@@ -74,7 +79,8 @@
                     android:ems="10"
                     android:hint="@string/search_anything"
                     android:inputType="text"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    android:importantForAutofill="no" />
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -82,7 +88,8 @@
                     android:layout_height="50dp"
                     android:background="@drawable/brown_full_corner_bg"
                     android:padding="12dp"
-                    app:srcCompat="@drawable/settings" />
+                    app:srcCompat="@drawable/settings"
+                    android:contentDescription="@null" />
 
             </LinearLayout>
 
@@ -101,7 +108,8 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:shapeAppearanceOverlay="@style/CircleCornerImageView"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                    tools:srcCompat="@tools:sample/backgrounds/scenic"
+                    android:contentDescription="@null" />
 
                 <ProgressBar
                     android:id="@+id/progressBarBanner"
@@ -123,7 +131,7 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Category"
+                android:text="@string/category"
                 android:textColor="@color/darkBrown"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -160,7 +168,8 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
                 <TextView
                     android:id="@+id/textViewPopularTitle"
@@ -176,8 +185,7 @@
                     android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="See all"
-
+                    android:text="@string/see_all"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -190,6 +198,7 @@
                     android:id="@+id/popularView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -227,9 +236,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical">
+                android:layout_gravity="center_vertical"
+                android:baselineAligned="false">
 
                 <LinearLayout
+                    android:id="@+id/explorerBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -240,7 +251,8 @@
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/btn_1" />
+                        app:srcCompat="@drawable/btn_1"
+                        android:contentDescription="@null" />
 
                     <TextView
                         android:id="@+id/textView3"
@@ -260,14 +272,13 @@
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/btn_2" />
+                        app:srcCompat="@drawable/btn_2"
+                        android:contentDescription="@null" />
 
                     <TextView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
@@ -277,69 +288,69 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/wishlistBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/btn_3" />
+                        app:srcCompat="@drawable/btn_3"
+                        android:contentDescription="@null" />
 
                     <TextView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="Wishlist"
+                        android:text="@string/wishlist"
                         android:textAlignment="center"
                         android:textColor="@color/darkBrown" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/orderBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/btn_4" />
+                        app:srcCompat="@drawable/btn_4"
+                        android:contentDescription="@null" />
 
                     <TextView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="My order"
+                        android:text="@string/my_order"
                         android:textAlignment="center"
                         android:textColor="@color/darkBrown" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/profileBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/btn_5" />
+                        app:srcCompat="@drawable/btn_5"
+                        android:contentDescription="@null" />
 
                     <TextView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/profite"
+                        android:text="@string/profile"
                         android:layout_marginTop="3dp"
                         android:textAlignment="center"
                         android:textColor="@color/darkBrown"/>

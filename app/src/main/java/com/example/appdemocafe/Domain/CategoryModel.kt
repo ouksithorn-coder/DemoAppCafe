@@ -1,3 +1,7 @@
-package com.example.appdemocafe.Domain
+package com.example.appdemocafe.domain
 
-data class CategoryModel(val title: String = "", val id: Int = 0)
+data class CategoryModel(
+    val title: String = "",
+    val id: Int = 0,
+    val picUrl: String = ""
+)

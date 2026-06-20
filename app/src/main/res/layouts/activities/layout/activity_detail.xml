@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightgrey"
-    tools:context=".Activity.DetailActivity">
+    tools:context=".activity.DetailActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/backImg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:text="Coffee Size"
                 android:textStyle="bold"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/darkBrown"
                 android:layout_marginStart="16dp"/>
 
@@ -178,12 +178,12 @@
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/pulsBtn"
+                        app:layout_constraintEnd_toStartOf="@+id/plusBtn"
                         app:layout_constraintStart_toEndOf="@+id/minusBtn"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/pulsBtn"
+                        android:id="@+id/plusBtn"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:gravity="center"
@@ -210,7 +210,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/imageView11"
+                    android:id="@+id/starImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -226,7 +226,7 @@
                 android:layout_marginTop="32dp"
                 android:text="Description"
                 android:textColor="@color/darkBrown"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -253,7 +253,7 @@
                     android:background="@drawable/brown_full_corner_bg"
                     android:text="Add to Cart"
                     android:textStyle="bold"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

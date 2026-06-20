@@ -38,6 +38,18 @@ android {
     buildFeatures {
         viewBinding=true
     }
+
+    sourceSets {
+        getByName("main") {
+            res.setSrcDirs(
+                listOf(
+                    "src/main/res/layouts/activities",
+                    "src/main/res/layouts/adapters",
+                    "src/main/res"
+                )
+            )
+        }
+    }
 }
 
 dependencies {

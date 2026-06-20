@@ -1,3 +1,3 @@
-package com.example.appdemocafe.Domain
+package com.example.appdemocafe.domain
 
-data class BannerModel(val url: String="")
+data class BannerModel(val url: String = "")

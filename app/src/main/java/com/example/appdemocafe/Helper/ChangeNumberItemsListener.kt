@@ -1,4 +1,4 @@
-package com.example.appdemocafe.Helper
+package com.example.appdemocafe.helper
 
 interface ChangeNumberItemsListener {
     fun onChanged()

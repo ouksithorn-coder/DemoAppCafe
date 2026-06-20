@@ -1,4 +1,4 @@
-package com.example.appdemocafe.Adapter
+package com.example.appdemocafe.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -6,40 +6,38 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.appdemocafe.Activity.DetailActivity
-import com.example.appdemocafe.Domain.ItemsModel
+import com.example.appdemocafe.activity.DetailActivity
+import com.example.appdemocafe.domain.ItemsModel
+import com.example.appdemocafe.R
 import com.example.appdemocafe.databinding.ViewholderItemListBinding
-import com.example.appdemocafe.databinding.ViewholderPopularBinding
 
 class ItemsListCategoryAdapter(val items: MutableList<ItemsModel>) :
-    RecyclerView.Adapter<ItemsListCategoryAdapter.Viewholder>() {
+    RecyclerView.Adapter<ItemsListCategoryAdapter.ViewHolder>() {
 
     private lateinit var context: Context
 
-    class Viewholder(val binding: ViewholderItemListBinding) :
+    class ViewHolder(val binding: ViewholderItemListBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): ItemsListCategoryAdapter.Viewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
         val binding = ViewholderItemListBinding.inflate(LayoutInflater.from(context), parent, false)
-        return Viewholder(binding)
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ItemsListCategoryAdapter.Viewholder, position: Int) {
-        holder.binding.titleTxt.text = items[position].title
-        holder.binding.priceTxt.text = "$" + items[position].price.toString()
-        holder.binding.subtitleTxt.text = items[position].extra
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = items[position]
+        holder.binding.titleTxt.text = item.title
+        holder.binding.priceTxt.text = context.getString(R.string.currency_placeholder, item.price.toString())
+        holder.binding.subtitleTxt.text = item.extra
 
         Glide.with(context)
-            .load(items[position].picUrl[0])
+            .load(item.picUrl[0])
             .into(holder.binding.pic)
 
         holder.itemView.setOnClickListener {
-            val intent= Intent(context, DetailActivity::class.java)
-            intent.putExtra("object", items[position])
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("object", item)
             context.startActivity(intent)
         }
     }

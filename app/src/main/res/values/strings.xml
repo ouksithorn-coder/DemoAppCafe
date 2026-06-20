@@ -1,12 +1,24 @@
 <resources>
     <string name="app_name">appdemocafe</string>
-    <string name="choiec_your_nfavorit_coffee">Choose your\nFavorite Coffee</string>
+    <string name="choice_your_favorite_coffee">Choose your\nFavorite Coffee</string>
     <string name="get_started">Get Started</string>
     <string name="search_anything">Search anything...</string>
-    <string name="popular_coffee">Popular Coffee</string>
+    <string name="popular_coffee">Menu</string>
     <string name="cart">Cart</string>
     <string name="explorer">Explorer</string>
-    <string name="profite">Profite</string>
+    <string name="profile">Profile</string>
     <string name="enter_your_discount_code">Enter Your Discount code</string>
     <string name="apply">Apply</string>
+    <string name="user_name_placeholder">Tina Anderson</string>
+    <string name="category">Category</string>
+    <string name="see_all">See all</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="my_order">My order</string>
+    <string name="back">Back</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="delivery">Delivery</string>
+    <string name="total_tax">Total Tax</string>
+    <string name="total">Total</string>
+    <string name="proceed_checkout">Proceed Checkout</string>
+    <string name="currency_placeholder">$%s</string>
 </resources>
