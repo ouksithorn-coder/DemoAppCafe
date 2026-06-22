@@ -21,4 +21,5 @@
     <string name="total">Total</string>
     <string name="proceed_checkout">Proceed Checkout</string>
     <string name="currency_placeholder">$%s</string>
+    <string name="title_activity_edit_profile">EditProfileActivity</string>
 </resources>
